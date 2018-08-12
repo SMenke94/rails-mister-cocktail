@@ -1,0 +1,26 @@
+.card {
+  height: 200px;
+  margin-top: 30px;
+  text-shadow: 0 1px 3px rgba(0,0,0,0.6);
+  border-radius: 3px;
+  background-size: cover !important;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+.card-description {
+  h2 {
+    margin-top: 20px;
+  }
+  a {
+    color: white;
+    font-size: 24px;
+    transition: 0.3s ease;
+  }
+  a:hover {
+    color: $pink;
+    font-size: 30px;
+    text-decoration: none;
+  }
+}

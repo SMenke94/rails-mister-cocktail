@@ -1,0 +1,19 @@
+<div class="navbar-sassy">
+  <!-- Search -->
+  <div class="search-form">
+    <%= form_tag(cocktails_path, method: "get") do %>
+      <%= text_field_tag(:q) %>
+      <%= submit_tag("Search", class:"btn-navbar-search") %>
+    <% end %>
+  </div>
+
+  <!-- Logo -->
+  <%= link_to cocktails_path do %>
+    <%= image_tag "logo.png", alt: "logo", class:"sassy-logo" %>
+  <% end %>
+
+  <!-- Add Cocktail -->
+  <div class="new-btn">
+    <%= link_to "Add a Cocktail", new_cocktail_path, class:"btn-navbar-new" %>
+  </div>
+</div>

@@ -1,6 +1,10 @@
 class CocktailsController < ApplicationController
   def index
-    @cocktails = Cocktail.all
+    if params[:q] && !(params[:q] == "")
+      @cocktails = Cocktail.joins(doses: :ingredient).where("ingredients.name ILIKE '#{params[:q]}%'")
+    else
+      @cocktails = Cocktail.all
+    end
   end
 
   def show
@@ -23,6 +27,6 @@ class CocktailsController < ApplicationController
   private
 
   def cocktail_params
-    params.require(:cocktail).permit(:name)
+    params.require(:cocktail).permit(:name, :picture_url)
   end
 end
