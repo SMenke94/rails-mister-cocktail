@@ -3,7 +3,7 @@
   <div class="search-form">
     <%= form_tag(cocktails_path, method: "get") do %>
       <%= text_field_tag(:q) %>
-      <%= submit_tag("Search", class:"btn-navbar-search") %>
+      <%= submit_tag("Search", class:"btn-sassy btn-navbar-search") %>
     <% end %>
   </div>
 
@@ -14,6 +14,6 @@
 
   <!-- Add Cocktail -->
   <div class="new-btn">
-    <%= link_to "Add a Cocktail", new_cocktail_path, class:"btn-navbar-new" %>
+    <%= link_to "Add a Cocktail", new_cocktail_path, class:"btn-sassy btn-navbar-new" %>
   </div>
 </div>

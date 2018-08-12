@@ -1,24 +1,28 @@
-<div class="container">
-  <div class="banner-sassy" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path @cocktail.photo %>')">
-  </div>
-  <div class="cocktail-grid">
+<div class="banner-sassy" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path @cocktail.photo %>')">
+
+  <div class="container">
+
     <div class="cocktail-name">
       <h1><%= @cocktail.name %></h1>
     </div>
+
     <div class="cocktail-details">
       <% @cocktail.doses.each do |dose| %>
         <p>
           <em><%= dose.description %></em> of
           <em><%= dose.ingredient.name %></em>
-          <%= link_to "Delete", dose_path(dose), method: :delete %>
+          <%= link_to "Delete", dose_path(dose), method: :delete, class:"delete-dose" %>
         </p>
       <% end %>
+      <div class="cocktail-add-dose">
+        <%= link_to "Add Dose", new_cocktail_dose_path(@cocktail), class:"btn-sassy btn-add-dose add-dose"  %>
+      </div>
     </div>
-    <div class="cocktail-add-dose">
-      <%= link_to "Add Dose", new_cocktail_dose_path(@cocktail)  %>
-    </div>
+
     <div class="cocktail-back">
-      <%= link_to "Back", cocktails_path %>
+      <%= link_to "Back", cocktails_path, class:"btn-sassy btn-back" %>
     </div>
+
   </div>
 </div>
+
